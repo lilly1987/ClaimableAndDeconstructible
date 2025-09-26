@@ -14,7 +14,7 @@ namespace Lilly.ClaimableAndDeconstructible
     public static class Patch
     {
         public static HarmonyX harmony = null;
-        public static string harmonyId = "Lilly.";
+        public static string harmonyId = "Lilly.ClaimableAndDeconstructible";
 
         public static void OnPatch(bool repatch = false)
         {
