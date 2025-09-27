@@ -22,6 +22,11 @@
     <!-- <li>Mlie.CaptureThem</li> -->
     <!-- <li>brrainz.harmony</li> -->
   <!-- </loadAfter> -->
-  <description></description>
+  <description>기존엔 적 기지에 처들어가면 적을 모두 소탕해야 점거 및 해체가 가능한데  
+이 모드는 적 소탕여부와 관계없이 해체지시 및 점거가 가능  
+
+즉 적 기지 들어가자마자 적 건물 전부 점거해서 적이 못나오게하는 OP모드  
+해체 지시는 되는데 림이 해체까지 잘 하는지는 테스트가 완전히 안된 상태  
+</description>
   <modVersion IgnoreIfNoMatchingField="True">1.0.0</modVersion>
 </ModMetaData>
