@@ -51,21 +51,13 @@ namespace Lilly.ClaimableAndDeconstructible
         [HarmonyPrefix]
         public static bool ClaimableBy(WorkGiver_Uninstall __instance, ref bool __result, Pawn pawn, Thing t, bool forced = false)
         {
-            if (t.def.Claimable)
-            {
-                //if (t.Faction != pawn.Faction)
-                //{
-                //    __result= false;
-                //    return false;
-                //}
-            }
-            else if (pawn.Faction != Faction.OfPlayer)
+            if (!t.def.Claimable && pawn.Faction != Faction.OfPlayer)
             {
                 __result = false;
                 return false;
             }
-            __result = __instance.HasJobOnThing(pawn, t, forced);
-            return false;
+
+            return true;
         }
 
         [HarmonyPatch(typeof(Building), "ClaimableBy")]
@@ -92,21 +84,6 @@ namespace Lilly.ClaimableAndDeconstructible
             }
             __result = true;
             return false;
-            // 맵 조건 무시
-            Faction faction;
-            if ((faction = __instance.Faction) == null)
-            {
-                Map map = __instance.Map;
-                faction = ((map != null) ? map.ParentFaction : null);
-            }
-            string value;
-            if (__instance.FactionPreventsClaimingOrAdopting(faction, true, out value))
-            {
-                __result = value;
-                return false;
-            }
-            __result = true;
-            return false;
         }
 
         [HarmonyPatch(typeof(Building), "DeconstructibleBy")]
@@ -127,23 +104,6 @@ namespace Lilly.ClaimableAndDeconstructible
                 return false;
             }
             __result = true;
-            return false;
-            if (DebugSettings.godMode)
-            {
-                __result = true;
-                return false;
-            }
-            if (__instance.Faction == faction)
-            {
-                __result = true;
-                return false;
-            }
-            if (__instance.def.building.alwaysDeconstructible)
-            {
-                __result = true;
-                return false;
-            }
-            __result = __instance.ClaimableBy(faction);
             return false;
         }
     }

@@ -25,7 +25,6 @@ namespace Lilly.ClaimableAndDeconstructible
         }
 
         Vector2 scrollPosition;
-        string tmp;
 
         public override void DoSettingsWindowContents(Rect inRect)
         {

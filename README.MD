@@ -5,6 +5,9 @@
 즉 적 기지 들어가자마자 적 건물 전부 점거해서 적이 못나오게하는 OP모드  
 해체 지시는 되는데 림이 해체까지 잘 하는지는 테스트가 완전히 안된 상태  
 
+# RimWorld 1.7 빌드
+1.7 설치와 Harmony 1.7, .NET 10 SDK가 필요합니다. 모드 폴더의 `Build.bat`을 실행하면 `Assemblies\ClaimableAndDeconstructible.dll`을 빌드합니다. 명령 프롬프트에서 일시 정지 없이 실행하려면 `Build.bat /nopause`를 사용하세요.
+
 # 다운로드 방법1
 우측상단 초록색 "<> Code" 클릭  
 Download ZIP 클릭
